@@ -46,6 +46,10 @@ module.exports = {
         options: vueLoaderConfig
       },
       {
+        test: /\.s[a|c]ss$/,
+        loader: 'style!css!sass'
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
@@ -75,6 +79,11 @@ module.exports = {
         }
       }
     ]
+  },
+  vue: {
+    loaders: {
+      scss: 'style!css!sass'
+    }
   },
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
